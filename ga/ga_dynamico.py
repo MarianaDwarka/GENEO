@@ -33,17 +33,43 @@ def calculate_distance(upf_ubicacion:np.ndarray, usuarios)->tuple:
     return np.argsort(distances),usuarios[:,2], upf_ubicacion[mask_capacidad]
 
 
-class GAtelco:
+def usuarios_dataset(filename:str="../csvs/Hora_00_MEX_v2.csv"):
+    df = pd.read_csv(filename)
+    rango_tipo = {1:[0.4,0.6], 2:[0.1,0.2], 3:[0.001,0.02]}
+    usuario = {}
+    for tipo in range(1,4):
+        s = df[df["prioridad"]==tipo]["ancho_de_banda(Gbps)"].size
+        df[df["prioridad"]==tipo]["ancho_de_banda(Gbps)"] = np.random.uniform(rango_tipo[tipo][0],rango_tipo[tipo][1],s)
+        usuario["tipo{}".format(tipo)]=df[df["prioridad"]==tipo][["SW_LAT", "SW_LONG", "ancho_de_banda(Gbps)"]].sample(int(len(df[df["prioridad"]==tipo])*.1))
+    # usuario = {
+    #     "tipo1": df[df["prioridad"]==1][["SW_LAT", "SW_LONG", "ancho_de_banda(Gbps)"]].sample(int(len(df[df["prioridad"]==1])*.1)), #Convertir en array,
+    #     "tipo2": df[df["prioridad"]==2][["SW_LAT", "SW_LONG", "ancho_de_banda(Gbps)"]].sample(int(len(df[df["prioridad"]==2])*.1)),
+    #     "tipo3": df[df["prioridad"]==3][["SW_LAT", "SW_LONG", "ancho_de_banda(Gbps)"]].sample(int(len(df[df["prioridad"]==3])*.1))
+    # }
+    lat, long, banda = [], [], []
+    for tipo in usuario:
+        lat.extend(usuario[tipo]["SW_LAT"].tolist())
+        long.extend(usuario[tipo]["SW_LONG"].tolist())
+        banda.extend(usuario[tipo]["ancho_de_banda(Gbps)"].tolist())
+    df_tmp = {"SW_LAT":lat, "SW_LONG":long, "ancho_de_banda(Gbps)":banda}
+    return pd.DataFrame(df_tmp)
+
+
+class GAdynamic:
     """
     Clase que implementa un Algoritmo Genético para optimizar la ubicación de routers
     en función de la latencia para diferentes tipos de usuarios.
     """
     num_routers = 1  # Número de routers a optimizar
     dimension=3
-    def __init__(self, mu=0.75, eta=0.5, generations: int = 200,
-                 people_priority: dict = {"tipo1": 5000, "tipo2": 15000, "tipo3": 100000},
-                 pop_size: int = 100,
-                 router=1):
+    def __init__(self, upf_planeacion:np.ndarray,
+                dataframe_hour:pd.DataFrame,
+                router:int,
+                mu=0.75,
+                eta=0.25,
+                generations: int = 200,
+                people_priority: dict = {"tipo1": 5000, "tipo2": 15000, "tipo3": 100000},
+                pop_size: int = 100):
         """
         Inicializa los parámetros del algoritmo genético.
         """
@@ -56,10 +82,9 @@ class GAtelco:
         self.num_user_p2 = people_priority["tipo2"]
         self.num_user_p3 = people_priority["tipo3"]
         self.router = router
-        self.mask = np.where(np.arange(self.router*3) % 3 != 2)[0]
-        self.distancias_sort,self.capacidad_usuario, self.capacidad_upf = calculate_distance(upf_ubicacion=np.array([30.92768884,-115.50024361,20000,21.00694924,-101.8125116,20000,19.34648502,-96.50402297,20000, 27.36310528,-104.739671,20000, 25.51121505,-99.18118252,20000]),
-                                                        usuarios=pd.read_csv("../../Hora_00_MEX_v2.csv"))
-
+        self.mask = np.where(np.arange(router*3) % 3 != 2)[0]
+        self.distancias_sort,self.capacidad_usuario, self.capacidad_upf = calculate_distance(upf_ubicacion=upf_planeacion,
+                                                        usuarios=dataframe_hour)
 
     def population(self):
         """
@@ -123,7 +148,7 @@ class GAtelco:
         return new_pop
 
 
-    def fx(self, pop_tmp):
+    def fx_(self, pop_tmp):
         row, col = self.distancias_sort.shape
         personas_sin_upf = np.zeros(pop_tmp.shape[0])
         n_personas = row
@@ -148,6 +173,39 @@ class GAtelco:
             # Contar personas sin casilla
             #personas_sin_upf = asignaciones.count(-1)
             personas_sin_upf[k] = asignaciones.count(-1)
+        return personas_sin_upf
+
+    def fx(self, pop_tmp):
+        row, col = self.distancias_sort.shape
+        n_pop = pop_tmp.shape[0]
+        personas_sin_upf = np.zeros(n_pop)
+        n_personas = row
+        n_upf = col
+        capacidades_upf = self.capacidad_upf
+
+        for k, capacidad_porcentual in enumerate(pop_tmp):
+            # Pre-calcular capacidades efectivas
+            capacidades_efectivas = capacidades_upf * capacidad_porcentual
+
+            ocupacion_upf = np.zeros(n_upf, dtype=int)
+            asignaciones = np.full(n_personas, -1)
+
+            for i in range(n_personas):
+                indices_casillas_ordenadas = self.distancias_sort[i]
+
+                # Vectorizar la comparación de capacidades disponibles
+                casillas_disponibles = indices_casillas_ordenadas[
+                    ocupacion_upf[indices_casillas_ordenadas] < capacidades_efectivas[indices_casillas_ordenadas]
+                ]
+
+                if len(casillas_disponibles) > 0:
+                    idx_upf = casillas_disponibles[0]  # La más cercana disponible
+                    asignaciones[i] = idx_upf
+                    ocupacion_upf[idx_upf] += 1
+
+            # Contar personas sin asignación de forma vectorizada
+            personas_sin_upf[k] = np.sum(asignaciones == -1)
+
         return personas_sin_upf
 
     def get_fitness(self, pop_gen: np.ndarray) -> tuple:
@@ -222,20 +280,22 @@ class GAtelco:
                 return {'dominio': dominio, 'imagen': imagen}  # Retorna las mejores soluciones encontradas.
 
         # Almacenar resultados finales.
+        dominio_str = [str(d) for d in dominio]
         df_result['optimal'] = imagen
         #df_result['optimal_tipo1'] = imagen_tipo1
         df_result['avg'] = pop_avg
+        df_result["dominio"] = dominio_str
         df_result = pd.DataFrame(df_result)
 
         # Generar gráficos de evolución.
-        self.plot_routers(df_result, dominio)
+        # self.plot_routers(df_result, dominio)
         #self.plot_optimal(df_result, dominio)
 
         # Guardar resultados en un archivo CSV.
-        df_result.to_csv(f"./resultado_{self.generations}.csv", index=False)
+        df_result.to_csv(f"./resultado_{self.generations}_dinamico.csv", index=False)
 
         return {'dominio': dominio, 'imagen': imagen}  # Retorna las mejores soluciones encontradas.
 
-x = GAtelco(router=5).GA()
-#pop_ = x.population()
-print(x)
+# x = GAdynamic(router=5).GA()
+# #pop_ = x.population()
+# print(x)
