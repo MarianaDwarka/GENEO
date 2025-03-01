@@ -31,7 +31,7 @@ def init_people(type_machine="mac"):
     """
     Inicializa las ubicaciones de los usuarios con una distribución normal.
     """
-    csv_route = "../csvs/Hora_00_MEX_v2.csv" if type_machine=="mac" else  r"..\csv's\Hora_00_MEX_v2.csv" #
+    csv_route = "./csvs/Hora_00_MEX_v2.csv" if type_machine=="mac" else  r".\csv's\Hora_00_MEX_v2.csv" #
     df = pd.read_csv(csv_route)
     rango_tipo = {1:[0.4,0.6], 2:[0.1,0.2], 3:[0.001,0.02]}
     usuario = {}
@@ -434,7 +434,8 @@ class GAtelco:
         #self.plot_optimal(df_result, dominio)
 
         # Guardar resultados en un archivo CSV.
-        df_result.to_csv(f"./resultado_{self.generations}.csv", index=False)
+        df_result.to_csv(f"./save_csv/resultado_{self.generations}.csv", index=False)
+
 
         return {'dominio': dominio, 'imagen': imagen}  # Retorna las mejores soluciones encontradas.
 
@@ -451,7 +452,7 @@ class GAtelco:
         # Para los routers óptimos
         ax.plot(routers_optimos[:, 1], routers_optimos[:, 0], ".", color="red", markersize=15)
         if save_f:
-            plt.savefig("result_{}_{}.png".format(self.generations,self.router))
+            plt.savefig("./save_images/result_{}_{}.png".format(self.generations,self.router))
         else:
             plt.show()
         # i=0
