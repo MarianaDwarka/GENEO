@@ -139,3 +139,29 @@ def calculate_distances(df, point_lat, point_long, lat_col='SW_LAT', long_col='S
     result_df['distancia_km'] = distance
     
     return result_df
+
+def calculate_tco(last_iteration: np.ndarray) -> int:
+    """
+    Calcula el Costo Total de Propiedad (TCO) de los UPFs basándose en su capacidad.
+    
+    Parámetros:
+    - last_iteration (np.ndarray): Array con las coordenadas y capacidad de los UPFs.
+
+    Retorna:
+    - int: El costo total en USD.
+    """
+    
+    # Diccionario de precios por capacidad en Gbps
+    prices = {
+        70: 19000,   # Small
+        140: 34000,  # Medium
+        300: 48000   # Large
+    }
+
+    # Extraer solo las capacidades (tercera columna en cada grupo de 3 valores)
+    capacities = last_iteration[2::3]  # Tomar cada tercer valor a partir del índice 2
+
+    # Calcular el costo total sumando los precios correspondientes a cada capacidad
+    total_cost = sum(prices.get(int(cap), 0) for cap in capacities)
+
+    return total_cost
