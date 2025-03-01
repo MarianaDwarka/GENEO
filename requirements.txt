@@ -118,6 +118,7 @@ pinecone==5.4.2
 pinecone-plugin-inference==3.1.0
 pinecone-plugin-interface==0.0.7
 pluggy==1.5.0
+polars==1.23.0
 posthog==3.16.0
 propcache==0.2.1
 protobuf==5.29.3
