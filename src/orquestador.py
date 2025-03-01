@@ -3,7 +3,7 @@ from ga.ga_phase1 import GAtelco
 from ga.ga_dynamico import GAdynamic, usuarios_dataset
 from models.model_phase1 import  prompt_interpretacion_planeacion, consult_db
 
-generaciones = 1000
+generaciones = 2
 upfs = 20
 
 planeacion = GAtelco(generations=generaciones,
