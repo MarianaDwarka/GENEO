@@ -33,6 +33,20 @@ The use cases for each priority are as follows:
 Based on ITU standards, what would be the optimal bandwidth distribution for each priority, considering the total bandwidth, number of priorities, and number of users per priority? Provide a clear explanation of how the distribution is calculated and justify the percentages assigned to each priority.
 """
 
+prompt_interpretacion_planeacion = """"Consulta en la base de conocimientos vectorizada con los estándares 3GPP TS 23.501 y 23.502: C
+                                    omparar los anchos de banda asignados a los UPFs (BW_UPF_1, BW_UPF_2, ..., BW_UPF_N) con los requisitos
+                                    recomendados para los User Plane Functions (UPFs) en un escenario Edge de una red 5G Core. Si todos los anchos
+                                    de banda asignados están alineados con lo recomendado, devolver 'OK'. Si alguno no está alineado, devolver
+                                    'NOT OK' y aumentar el ancho de banda de esos UPFs en una cantidad 'X'.
+                                    A continuación de presento los resultaods obtenidos:
+                                        - ubicacion de los upfs {}
+                                        - estas son sus capacidades {}
+                                        - esta es la latencia que resultado de los upfs optimizados {}
+                                        - todos los upfs son de Huawei
+                                    Con esto me puedes decir si esta 'OK' o 'NOT OK'
+
+                                    """
+
 # Respuesta modelo basada en los estándares ITU-T para la distribución de ancho de banda
 answere = """
 Basado en los estándares ITU-T Y.1541 e ITU-T G.1010, la distribución de ancho de banda para las prioridades dadas sería la siguiente:
@@ -110,7 +124,12 @@ def consult_db(question, pos, latency, bw_total):
     # Búsqueda en la base de datos vectorial utilizando Pinecone
     response = vectorstore.similarity_search(question, namespace="connectivity", k=10)
 
+    print(response[0])
+    exit()
+
     # Mejora de la respuesta obtenida con el modelo de lenguaje
     improved_response = improve_response(response[0].page_content, pos, latency, bw_total)
-    
+
     return improved_response.content  # Se devuelve la respuesta mejorada
+
+consult_db(prompt_interpretacion_planeacion, pos=[],latency=[], bw_total=[])
