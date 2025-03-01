@@ -35,11 +35,11 @@ def calculate_distance(upf_ubicacion:np.ndarray, usuarios)->tuple:
 
 def usuarios_dataset(filename:str="../csvs/Hora_00_MEX_v2.csv"):
     df = pd.read_csv(filename)
-    rango_tipo = {1:[0.4,0.6], 2:[0.1,0.2], 3:[0.001,0.02]}
+    #rango_tipo = {1:[0.4,0.6], 2:[0.1,0.2], 3:[0.001,0.02]}
     usuario = {}
     for tipo in range(1,4):
-        s = df[df["prioridad"]==tipo]["ancho_de_banda(Gbps)"].size
-        df[df["prioridad"]==tipo]["ancho_de_banda(Gbps)"] = np.random.uniform(rango_tipo[tipo][0],rango_tipo[tipo][1],s)
+        #s = df[df["prioridad"]==tipo]["ancho_de_banda(Gbps)"].size
+        #df[df["prioridad"]==tipo]["ancho_de_banda(Gbps)"] = np.random.uniform(rango_tipo[tipo][0],rango_tipo[tipo][1],s)
         usuario["tipo{}".format(tipo)]=df[df["prioridad"]==tipo][["SW_LAT", "SW_LONG", "ancho_de_banda(Gbps)"]].sample(int(len(df[df["prioridad"]==tipo])*.1))
     # usuario = {
     #     "tipo1": df[df["prioridad"]==1][["SW_LAT", "SW_LONG", "ancho_de_banda(Gbps)"]].sample(int(len(df[df["prioridad"]==1])*.1)), #Convertir en array,
@@ -67,7 +67,7 @@ class GAdynamic:
                 router:int,
                 mu=0.75,
                 eta=0.25,
-                generations: int = 200,
+                generations: int = 50,
                 people_priority: dict = {"tipo1": 5000, "tipo2": 15000, "tipo3": 100000},
                 pop_size: int = 100):
         """
@@ -296,6 +296,6 @@ class GAdynamic:
 
         return {'dominio': dominio, 'imagen': imagen}  # Retorna las mejores soluciones encontradas.
 
-# x = GAdynamic(router=5).GA()
-# #pop_ = x.population()
-# print(x)
+#x = GAdynamic(router=5).GA()
+#pop_ = x.population()
+#print(x)
