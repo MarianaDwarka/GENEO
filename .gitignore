@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+.env
+src/ga/resultado_*.csv
+.DS_Store
+backup_results/
