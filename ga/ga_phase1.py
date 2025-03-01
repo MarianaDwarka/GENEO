@@ -117,7 +117,7 @@ class GAtelco:
         return nfs_capacitie
 
 
-    def selection(self, pop_tmp: np.ndarray, l_eval: list) -> dict:
+    def selection_tmp(self, pop_tmp: np.ndarray, l_eval: list) -> dict:
         """
         Selecciona los individuos más aptos de la población usando torneo.
         """
@@ -139,7 +139,7 @@ class GAtelco:
         mother = pop_tmp[list_pop, :]
         return {'father': father, 'mother': mother}
 
-    def selection_tmp(self, pop_tmp: np.ndarray, l_eval: list) -> dict:
+    def selection(self, pop_tmp: np.ndarray, l_eval: list) -> dict:
         """
         Selecciona los individuos más aptos de la población usando torneo.
         Versión optimizada con operaciones vectorizadas.
@@ -196,11 +196,6 @@ class GAtelco:
         """
         mask_latitud = np.where(self.mask%3==0)[0]
         mask_longitud = np.where(self.mask%3!=0)[0]
-
-        # Initialize random ranges for latitude and longitude (from remote)
-        rango_latitud = np.random.uniform(low=13.889853705541531, high=33.36265536391364, size=(self.pop_size, mask_latitud.size))
-        rango_longitud = np.random.uniform(low=-117.80190998938004, high=-85.96884640258124, size=(self.pop_size, mask_longitud.size))
-
         eta_mat = np.random.random(self.pop_size)
         mut_eta = np.where(eta_mat <= self.eta)[0]
         rango_latitud = np.random.uniform(low=13.889853705541531, high=33.36265536391364, size=(mut_eta.size, mask_latitud.size))
@@ -241,7 +236,6 @@ class GAtelco:
                 distances_router = np.zeros((usuarios.shape[0], col_position.size))
 
                 # Extraer las coordenadas de los routers de una vez
-                # router_coords = np.array([row[i0:nf] for i0, nf in zip(range(0, col_position[-1]+1, 3), col_position)])
                 router_coords = row[self.mask].reshape(self.router,2)
                 # Cálculo vectorizado de distancias para todos los routers a la vez
                 for j, coords in enumerate(router_coords):
@@ -268,12 +262,6 @@ class GAtelco:
                 else:
                     # Para los demás tipos
                     L[i] = ponderacion[i] * np.sum(distances_router[np.arange(len(router_cercano)), router_cercano]) / 100
-
-                # Actualizar capacidades de router de manera vectorizada
-                # for router in range(self.router):
-                #     usuarios_asignados = usuarios[router_cercano == router, 2]
-                #     if len(usuarios_asignados) > 0:
-                #         capacidad_tipo[router] = row[col_position[router]] - np.sum(usuarios_asignados)
                 for router in range(self.router):
                     usuario_asig_router = np.where(asignaciones_router[k][i]==router)[0]
                     capacidad_tipo[router] = row[router] - np.sum(distribution_people[prioridad][usuario_asig_router,2])
