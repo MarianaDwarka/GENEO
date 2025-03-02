@@ -6,7 +6,7 @@ import pandas as pd
 from utils import calculate_tco
 from models.model_phase1 import prompt_db_vector, consult_db
 from ga.ga_phase1 import GAtelco
-from gif.create_gif import create_gif
+
 
 # Configuración de la página
 st.set_page_config(
