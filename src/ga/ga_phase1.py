@@ -452,7 +452,7 @@ class GAtelco:
         # Para los routers óptimos
         ax.plot(routers_optimos[:, 1], routers_optimos[:, 0], ".", color="red", markersize=15)
         if save_f:
-            plt.savefig("./save_images/result_{}_{}.png".format(self.generations,self.router))
+            plt.savefig("/mount/src/geneo/src/save_images/result_{}_{}.png".format(self.generations,self.router))
         else:
             plt.show()
         # i=0
@@ -515,7 +515,7 @@ class GAtelco:
             plt.title("Optimal Distribution of a Router")
 
             # Guardar la imagen de la distribución óptima en la carpeta para el GIF
-            plt.savefig(f"./images_gif/generation_{i}.jpg")
+            plt.savefig(f"/mount/src/geneo/src/images_gif/generation_{i}.jpg")
 
 
     def create_gif(image_folder:str, gif_filename:str, duration:int=100):
