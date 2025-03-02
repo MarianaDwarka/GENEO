@@ -5,7 +5,7 @@ from models.model_phase1 import  prompt_interpretacion_planeacion, consult_db
 from models.model_json import  improve_response_json
 
 generaciones = 10
-upfs = 2
+upfs = 6
 generacion_por_hora=50
 
 planeacion = GAtelco(generations=generaciones,
@@ -27,7 +27,7 @@ for i in range(1,24):
                                 router=n_routers,
                                 mu=0.8,
                                 eta=0.4,
-                                generations=2).GA()
+                                generations=4).GA()
     carga_dinamica_optima = ajuste_dinamico["dominio"][-1]
 
     explicacion_distribucion = consult_db(prompt_interpretacion_planeacion,
