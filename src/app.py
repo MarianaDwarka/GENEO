@@ -108,7 +108,7 @@ if option == "Network Planning":
     
     # Definir la cantidad de UPFs
     st.markdown("**Define the number of UPFs to be deployed in the network:**", unsafe_allow_html=True)
-    upf_number = st.number_input("Quantity of UPFs: ", 1, 50, step=1)
+    upf_number = st.number_input("Quantity of UPFs: ", 6, 50, step=1)
     
     result_container = st.empty()
     tco_container = st.empty()
@@ -118,7 +118,7 @@ if option == "Network Planning":
     if st.button("Run Network Planning"):
         with st.spinner("Running Genetic Algorithm..."):
             ga_instance = GAtelco(
-                generations=5, 
+                generations=30, 
                 router=upf_number, 
                 mu=0.75, 
                 eta=0.5
