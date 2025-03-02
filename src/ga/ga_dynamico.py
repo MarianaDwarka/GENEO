@@ -292,7 +292,7 @@ class GAdynamic:
         #self.plot_optimal(df_result, dominio)
 
         # Guardar resultados en un archivo CSV.
-        df_result.to_csv(f"./resultado_{self.generations}_dinamico.csv", index=False)
+        df_result.to_csv(f"./save_csv/resultado_{self.generations}_dinamico.csv", index=False)
 
         return {'dominio': dominio, 'imagen': imagen}  # Retorna las mejores soluciones encontradas.
 
