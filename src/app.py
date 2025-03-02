@@ -46,7 +46,7 @@ st.markdown(
 # Menú lateral con botones
 path_icon = './wireless.png'
 #img = Image.open(path_icon)
-st.logo(img, icon_image=path_icon)#, size="large")
+st.logo(path_icon, icon_image=path_icon)#, size="large")
 
 st.sidebar.title("Menu")
 if st.sidebar.button("Network Planning"):
