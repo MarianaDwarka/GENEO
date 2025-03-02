@@ -61,7 +61,7 @@ if "page" not in st.session_state:
 option = st.session_state["page"]
 
 st.title("G.E.N.E.O 📡 ")
-
+st.write(os.getcwd())
 st.markdown(
     """ #### Genetic Evolution for Network Efficiency and Optimization
     """, unsafe_allow_html=True)
