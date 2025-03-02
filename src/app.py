@@ -181,7 +181,7 @@ elif option == "Network Optimization":
         - This is executed using **API operations (AsSessionWithQoS)** defined by **3GPP**.
         """, unsafe_allow_html=True)
     
-    gif_path = "media/plots.gif"
+    gif_path = "/mount/src/geneo/src/media/plots.gif"
     with st.spinner("Generating Optimization GIF..."):
         while not os.path.exists(gif_path):
             st.warning("The optimization GIF is being generated... Please wait.")
@@ -192,13 +192,13 @@ elif option == "Network Optimization":
         data_url = base64.b64encode(contents).decode("utf-8")
     
     st.markdown(
-        f'<img src="data:image/gif;base64,{data_url}" alt="Network Optimization Evolution">',
+        f'<img src="data:/mount/src/geneo/src/image/gif;base64,{data_url}" alt="Network Optimization Evolution">',
         unsafe_allow_html=True
     )
 
 
     # Cargar CSV
-    df = pd.read_csv("save_csv/validacion_generaciones_10_routers_6.csv")
+    df = pd.read_csv("/mount/src/geneo/src/save_csv/validacion_generaciones_10_routers_6.csv")
 
     # Título de la app
     st.title("Network Load Distribution Analysis")
