@@ -118,8 +118,7 @@ if option == "Network Planning":
                 generations=5, 
                 router=upf_number, 
                 mu=0.75, 
-                eta=0.5, 
-                people_priority={"tipo1": 5000, "tipo2": 15000, "tipo3": 100000}
+                eta=0.5
             )
             resultado_ga = ga_instance.GA()
             last_iteration = resultado_ga['dominio'][-1]
