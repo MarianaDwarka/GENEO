@@ -13,8 +13,8 @@ load_dotenv()
 # Configuración de las variables de entorno para OpenAI y Pinecone
 os.environ["OPENAI_API_TYPE"] = "openai"
 os.environ["MODEL_OPENAI_4O"] = "gpt-4o"
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")  # Clave de API de OpenAI
-os.environ['PINECONE_API_KEY'] = os.getenv("PINECONE_API_KEY")  # Clave de API de Pinecone
+os.environ["OPENAI_API_KEY"] = ""#os.getenv("OPENAI_API_KEY")  # Clave de API de OpenAI
+os.environ['PINECONE_API_KEY'] = ""#os.getenv("PINECONE_API_KEY")  # Clave de API de Pinecone
 
 # Prompt utilizado para la consulta a la base de datos basada en estándares ITU-T
 prompt_db_vector = """
