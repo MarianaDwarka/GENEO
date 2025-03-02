@@ -43,7 +43,7 @@ st.markdown(
 )
 
 # Menú lateral con botones
-path_icon = 'media/wireless.webp'
+path_icon = './media/wireless.webp'
 st.logo(path_icon, icon_image=path_icon)#, size="large")
 
 st.sidebar.title("Menu")
