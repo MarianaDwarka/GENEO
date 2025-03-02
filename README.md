@@ -1,7 +1,7 @@
 # GENEO: Genetic Evolution for Network Efficiency and Optimization
 
 
-![PANDORA Cover](geneo_portada.jpg)
+![GENEO Cover](geneo_portada.jpg)
 
 
 ## Overview
