@@ -434,7 +434,7 @@ class GAtelco:
         #self.plot_optimal(df_result, dominio)
 
         # Guardar resultados en un archivo CSV.
-        df_result.to_csv(f"./save_csv/resultado_{self.generations}.csv", index=False)
+        df_result.to_csv(f"/mount/src/geneo/src/save_csv/resultado_{self.generations}.csv", index=False)
 
 
         return {'dominio': dominio, 'imagen': imagen}  # Retorna las mejores soluciones encontradas.
