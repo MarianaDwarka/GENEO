@@ -1,5 +1,6 @@
 import os
 import time
+import json
 import base64
 import streamlit as st
 import pandas as pd
@@ -192,3 +193,31 @@ elif option == "Network Optimization":
         f'<img src="data:image/gif;base64,{data_url}" alt="Network Optimization Evolution">',
         unsafe_allow_html=True
     )
+
+
+    # Cargar CSV
+    df = pd.read_csv("save_csv/validacion_generaciones_10_routers_6.csv")
+
+    # Título de la app
+    st.title("Network Load Distribution Analysis")
+
+    # Mostrar la tabla con los datos
+    st.dataframe(df[['hora', 'response']], height=400)
+
+    # Mostrar detalles individuales
+    st.subheader("Details per Hour")
+
+    for index, row in df.iterrows():
+        with st.expander(f"Hour {row['hora']} - Analysis"):
+            st.write("### Response Summary:")
+            st.write(row["response"])
+
+            # Mostrar response_json en formato estructurado
+            st.write("### JSON Response:")
+            try:
+                response_json = json.loads(row["response_json"])
+                st.json(response_json)
+            except json.JSONDecodeError:
+                st.write("Invalid JSON format")
+
+
