@@ -1,0 +1,531 @@
+hora,response,response_json
+1,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en la información proporcionada, necesitaría más contexto específico sobre cómo se relacionan los valores numéricos [0.96702196, 0.9873963] con los criterios de evaluación de la carga de los UPFs. 
+
+Los valores parecen ser métricas o indicadores de rendimiento, pero sin un umbral o criterio de comparación específico, no es posible determinar si están dentro de un rango aceptable. En general, si estos valores representan una métrica de rendimiento como la utilización de CPU o memoria, y si el umbral aceptable es, por ejemplo, 0.95 (95%), entonces ambos valores estarían por encima de este umbral, lo que podría indicar una sobrecarga y, por lo tanto, sería ""NOT OK"". Sin embargo, si el umbral es más alto, podrían estar dentro de un rango aceptable y ser ""OK"".
+
+Para una evaluación precisa, se necesita información adicional sobre los umbrales de rendimiento aceptables para los UPFs en el contexto de tu red específica.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": ""135.38307437""
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": ""138.23548258""
+    }
+  ]
+}
+"
+2,"La información proporcionada no es suficiente para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"". Los valores numéricos [0.98334832 0.98935536] parecen ser métricas o indicadores de rendimiento, pero sin contexto adicional sobre qué representan específicamente (por ejemplo, carga de CPU, uso de memoria, latencia, etc.) y cuáles son los umbrales aceptables para estas métricas, no se puede hacer una evaluación precisa.
+
+Para evaluar la distribución de cargas de los UPFs, se necesitaría información adicional, como:
+
+1. **Definición de las métricas**: ¿Qué representan los valores proporcionados?
+2. **Umbrales de rendimiento**: ¿Cuáles son los valores aceptables o críticos para estas métricas?
+3. **Contexto operativo**: ¿En qué condiciones operativas se están midiendo estas métricas?
+
+Sin esta información, no es posible determinar si la distribución de cargas es adecuada.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": ""137.66876412""
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": ""138.50975022""
+    }
+  ]
+}
+"
+3,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en la información proporcionada, necesitaríamos más contexto específico sobre cómo se relacionan los valores numéricos [0.99568653, 0.90953747] con los criterios de evaluación de carga de los UPFs en tu sistema particular.
+
+Los valores parecen ser métricas o indicadores de rendimiento, pero sin un umbral o criterio de comparación específico, no es posible determinar si están dentro de un rango aceptable. En general, para evaluar la distribución de cargas de los UPFs, se considerarían factores como el balance de carga, la capacidad máxima, el uso de recursos, y los umbrales de rendimiento definidos por el operador o las especificaciones técnicas relevantes.
+
+Si estos valores representan, por ejemplo, la utilización de CPU o memoria de los UPFs, y el umbral aceptable es inferior a 1.0 (o 100%), entonces ambos valores estarían dentro de un rango aceptable, sugiriendo que la distribución de cargas es ""OK"". Sin embargo, si el umbral es diferente, la evaluación podría cambiar.
+
+En resumen, sin información adicional sobre los criterios de evaluación específicos para estos valores, no se puede proporcionar una respuesta definitiva. Sería recomendable consultar la documentación técnica o los estándares de rendimiento específicos de tu sistema para obtener una evaluación precisa.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": 139.39611483
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": 127.3352453
+    }
+  ]
+}
+"
+4,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en la información proporcionada, necesitamos más contexto sobre qué representan los valores [0.95925476 0.97124856]. Estos parecen ser valores numéricos que podrían representar métricas de carga, como la utilización de CPU, memoria, o algún otro recurso relevante para los UPFs.
+
+1. **Interpretación de los valores**: Si estos valores representan la utilización de recursos (por ejemplo, CPU o memoria), generalmente se considera que una utilización por encima del 90% es alta y podría indicar un riesgo de sobrecarga. En este caso, ambos valores están por encima del 95%, lo que sugiere que los UPFs están operando cerca de su capacidad máxima.
+
+2. **Evaluación**: 
+   - **""OK""**: Si el sistema está diseñado para operar eficientemente a estos niveles de utilización sin riesgo de degradación del servicio, entonces podría considerarse ""OK"".
+   - **""NOT OK""**: Si estos niveles de utilización son insostenibles a largo plazo o podrían llevar a problemas de rendimiento, entonces sería ""NOT OK"".
+
+Dado que no se proporciona información adicional sobre los límites aceptables de carga para los UPFs en este contexto, y considerando que los valores están por encima del 95%, es razonable concluir que la distribución de cargas podría ser ""NOT OK"" debido al riesgo potencial de sobrecarga. Sin embargo, una evaluación definitiva requeriría más detalles sobre los umbrales de rendimiento aceptables para el sistema específico en cuestión.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": ""134.29566697""
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": ""135.97479798""
+    }
+  ]
+}
+"
+5,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en los valores proporcionados [0.84630227, 0.97096456], necesitamos un contexto adicional sobre qué representan estos valores y cuáles son los criterios de aceptación para la distribución de cargas en tu sistema específico.
+
+Sin embargo, puedo ofrecerte una guía general:
+
+1. **Balance de Carga**: Si los valores representan la carga en diferentes UPFs, idealmente deberían estar equilibrados para evitar sobrecargar un solo UPF. Un balance de carga cercano entre los UPFs es generalmente deseable.
+
+2. **Umbrales de Carga**: Si hay umbrales específicos que no deben superarse (por ejemplo, un UPF no debe estar cargado por encima del 90%), entonces deberías verificar si alguno de los valores excede ese umbral.
+
+3. **Desviación Aceptable**: Si existe un rango de desviación aceptable entre las cargas de los UPFs, verifica si los valores están dentro de ese rango.
+
+Sin información adicional sobre los criterios específicos de tu sistema, no puedo determinar con certeza si la distribución es ""OK"" o ""NOT OK"". Te recomendaría revisar los criterios de rendimiento y balance de carga establecidos para tu red o sistema para hacer una evaluación precisa.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": ""118.48231841""
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": ""135.93503845""
+    }
+  ]
+}
+"
+6,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"", necesitaría información específica sobre la carga actual, la capacidad de los UPFs y cualquier umbral o criterio de rendimiento que se esté utilizando para evaluar la distribución de la carga. Los valores proporcionados [0.98949004 0.95687982] parecen ser métricas de rendimiento o utilización, pero sin un contexto claro sobre qué representan exactamente (por ejemplo, porcentaje de utilización, latencia, etc.) y cuáles son los límites aceptables, no puedo determinar si la distribución es adecuada.
+
+En general, si estos valores representan la utilización de los UPFs y están cerca del 100%, podría indicar que los UPFs están cerca de su capacidad máxima, lo cual podría ser una situación de ""NOT OK"" si no hay margen para manejar picos de tráfico adicionales. Sin embargo, si estos valores están dentro de los límites operativos definidos por el operador, entonces podría considerarse ""OK"".
+
+Para una evaluación precisa, se debe comparar con los criterios de rendimiento específicos establecidos por el operador o las especificaciones técnicas relevantes.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": 138.52860549
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": 133.9631743
+    }
+  ]
+}
+"
+7,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en los valores proporcionados [0.86990551, 0.94740497], necesitamos un criterio o umbral específico que defina qué valores son aceptables. Sin un contexto adicional sobre qué representan estos números o cuál es el umbral de aceptación, no es posible hacer una evaluación precisa.
+
+Sin embargo, si asumimos que estos valores representan algún tipo de métrica de carga o rendimiento y que el umbral de aceptación es, por ejemplo, 1.0 (donde valores por debajo de 1.0 son aceptables), entonces ambos valores (0.86990551 y 0.94740497) estarían dentro del rango aceptable, y podríamos decir que la distribución de cargas es ""OK"".
+
+Por otro lado, si el umbral fuera más bajo, por ejemplo, 0.8, entonces el valor 0.94740497 excedería el umbral, y la distribución de cargas sería ""NOT OK"".
+
+En resumen, sin un criterio específico de aceptación, no se puede determinar con certeza si la distribución de cargas es ""OK"" o ""NOT OK"".","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": 121.7867709
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": 132.63669595
+    }
+  ]
+}
+"
+8,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en la información proporcionada, necesitaríamos más contexto específico sobre cómo se relacionan los valores numéricos [0.93436562, 0.90790093] con los criterios de evaluación de carga de los UPFs. 
+
+Los valores parecen ser métricas o indicadores de rendimiento, pero sin un umbral o criterio de comparación específico, no es posible determinar su adecuación. En general, si estos valores representan una métrica de carga o utilización, y si el umbral aceptable es, por ejemplo, por debajo de 0.9, entonces ambos valores estarían por encima del umbral, lo que podría indicar una sobrecarga y, por lo tanto, sería ""NOT OK"". Sin embargo, si el umbral es 1.0, entonces los valores estarían dentro del rango aceptable y sería ""OK"".
+
+En resumen, se necesita un criterio de referencia claro para evaluar si los valores son aceptables o no.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": ""130.81118698""
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": ""127.10613054""
+    }
+  ]
+}
+"
+9,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos únicamente en los valores proporcionados [0.96718989, 0.94697595], necesitamos más contexto sobre qué representan estos números y cuáles son los criterios de aceptación para la distribución de cargas en tu sistema específico.
+
+Sin embargo, puedo ofrecerte una interpretación general:
+
+1. **Valores cercanos a 1**: Los valores proporcionados (0.96718989 y 0.94697595) están muy cerca de 1, lo que podría indicar un alto nivel de utilización o eficiencia en la distribución de cargas. En muchos sistemas, un valor cercano a 1 podría considerarse óptimo, siempre que no se supere la capacidad máxima del sistema.
+
+2. **Criterios de aceptación**: Para determinar si estos valores son ""OK"", necesitaríamos conocer los umbrales específicos de tu sistema para considerar una carga como aceptable. Por ejemplo, si el umbral máximo permitido es 1, entonces estos valores estarían dentro del rango aceptable.
+
+3. **Balance de carga**: Si estos valores representan la carga en diferentes UPFs, y el objetivo es tener una distribución equilibrada, entonces los valores son bastante cercanos entre sí, lo que sugiere que la carga está distribuida de manera uniforme.
+
+En resumen, si los valores proporcionados están dentro de los límites aceptables definidos por tu sistema y no indican sobrecarga, podríamos considerar que la distribución de cargas es ""OK"". Sin embargo, sin conocer los criterios específicos de tu sistema, esta evaluación es general y podría no reflejar la realidad de tu situación particular.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": ""135.40658394""
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": ""132.57663273""
+    }
+  ]
+}
+"
+10,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en los valores proporcionados [0.87941011, 0.90177149], necesitamos un criterio de evaluación específico que no está presente en la información proporcionada. Los valores numéricos por sí solos no indican si la distribución es adecuada sin un contexto o umbral de referencia.
+
+En general, para evaluar la distribución de cargas de los UPFs, se considerarían factores como:
+
+1. **Balance de carga**: Si los valores representan la carga en diferentes UPFs, idealmente deberían estar equilibrados para evitar sobrecargas en un solo UPF.
+2. **Umbrales de rendimiento**: Si hay umbrales establecidos para la carga máxima permitida en un UPF, los valores deben estar por debajo de esos umbrales.
+3. **Rendimiento esperado**: Comparar los valores con el rendimiento esperado o histórico para determinar si están dentro de un rango aceptable.
+
+Sin un contexto adicional o criterios específicos, no es posible determinar si la distribución de cargas es ""OK"" o ""NOT OK"". Si tienes umbrales o criterios específicos para evaluar estos valores, por favor proporciónalos para una evaluación más precisa.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": 123.11741529
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": 126.24800827
+    }
+  ]
+}
+"
+11,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en la información proporcionada, necesitamos entender qué representan los valores numéricos [0.97664479 0.9968896]. Sin embargo, la información proporcionada no especifica claramente qué significan estos valores en el contexto de la distribución de cargas de los UPFs.
+
+En general, si estos valores representan algún tipo de métrica de rendimiento o carga, como la utilización de CPU o memoria, y están cerca de 1, podría indicar que los UPFs están operando cerca de su capacidad máxima, lo cual podría ser un motivo de preocupación. En tal caso, la distribución de cargas podría considerarse ""NOT OK"" si no hay suficiente margen para manejar picos de carga o fallos.
+
+Por otro lado, si estos valores están dentro de un rango aceptable definido por el operador o las especificaciones técnicas para la carga de los UPFs, entonces la distribución de cargas podría considerarse ""OK"".
+
+Sin una definición clara de lo que representan estos valores y los criterios específicos para evaluar la distribución de cargas, no es posible proporcionar una respuesta definitiva. Se recomienda revisar la documentación técnica específica del sistema o consultar con un experto en la infraestructura de red para obtener una evaluación precisa.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": ""136.73027071""
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": ""139.56454464""
+    }
+  ]
+}
+"
+12,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en la información proporcionada, necesitaría más detalles específicos sobre cómo se relacionan esos valores numéricos [0.97727593 0.96447953] con los criterios de evaluación de la carga de los UPFs. 
+
+Los valores parecen ser métricas o indicadores de rendimiento, pero sin un contexto claro sobre qué representan (por ejemplo, utilización de CPU, latencia, pérdida de paquetes, etc.) y cuáles son los umbrales aceptables para considerar que la distribución de carga es adecuada, no es posible hacer una evaluación precisa.
+
+En general, si estos valores representan tasas de utilización o eficiencia y están cerca de 1, podría interpretarse que los UPFs están operando cerca de su capacidad máxima, lo cual podría ser ""OK"" si están diseñados para operar de esa manera, o ""NOT OK"" si se espera que haya margen para manejar picos de carga adicionales. Sin embargo, sin un contexto claro, esta interpretación es especulativa.
+
+Por lo tanto, para proporcionar una respuesta clara y concisa, se necesitaría información adicional sobre qué representan exactamente esos valores y cuáles son los criterios de evaluación establecidos para la distribución de cargas de los UPFs.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": ""136.81863072""
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": ""135.02713421""
+    }
+  ]
+}
+"
+13,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en la información proporcionada [0.8952604, 0.9954681], necesitamos entender qué representan estos valores y cuál es el criterio de evaluación.
+
+Los valores parecen ser métricas de carga o utilización de los UPFs. En general, una distribución de carga se considera ""OK"" si los valores están dentro de un rango aceptable que no comprometa el rendimiento o la estabilidad del sistema. Sin embargo, sin un umbral específico o criterio de evaluación definido en el contexto proporcionado, es difícil hacer una evaluación precisa.
+
+Si asumimos que los valores representan la utilización de los UPFs en una escala de 0 a 1, donde 1 es el máximo de capacidad, ambos valores (0.8952604 y 0.9954681) están bastante cerca del límite superior. Esto podría indicar que los UPFs están operando cerca de su capacidad máxima, lo cual podría ser una preocupación si no hay margen para manejar picos de carga adicionales o fallos.
+
+Por lo tanto, sin un criterio específico, pero basándonos en la proximidad al límite superior, la distribución de cargas podría considerarse ""NOT OK"" debido al riesgo potencial de sobrecarga. Sin embargo, si el sistema está diseñado para operar de manera segura a estos niveles de utilización, entonces podría ser ""OK"". Es importante verificar con los criterios de rendimiento y capacidad específicos del sistema en cuestión.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": ""125.33645633""
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": ""139.36553367""
+    }
+  ]
+}
+"
+14,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en los valores proporcionados [0.98640985, 0.83857956], necesitamos más contexto sobre qué representan estos números y cuáles son los criterios de aceptación para la distribución de cargas en tu sistema específico.
+
+Sin embargo, en términos generales, si estos valores representan la carga o utilización de los UPFs, y suponiendo que el valor máximo aceptable es 1 (o 100%), ambos valores están por debajo de este umbral, lo que podría indicar que la distribución de cargas es ""OK"". Esto significa que los UPFs no están sobrecargados y están operando dentro de los límites aceptables.
+
+Si hay criterios específicos o umbrales definidos por tu organización o estándar que deban cumplirse, sería necesario compararlos con esos valores para dar una respuesta definitiva. Sin esa información adicional, solo puedo ofrecer una evaluación general basada en la suposición de que los valores deben ser menores o iguales a 1 para ser considerados ""OK"".","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": ""138.09737859""
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": ""117.40113891""
+    }
+  ]
+}
+"
+15,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en los valores proporcionados [0.99260372, 0.95945258], necesitamos un criterio de evaluación específico que no se ha proporcionado en el texto. Sin embargo, puedo ofrecerte una interpretación general:
+
+1. **Valores cercanos a 1**: Los valores proporcionados (0.99260372 y 0.95945258) están muy cerca de 1, lo que generalmente indica un alto nivel de rendimiento o eficiencia. En muchos contextos técnicos, valores cercanos a 1 pueden interpretarse como un rendimiento óptimo o dentro de los límites aceptables.
+
+2. **Sin criterios específicos**: Dado que no se han especificado umbrales o criterios de evaluación en el texto proporcionado, no podemos afirmar categóricamente si estos valores son ""OK"" o ""NOT OK"". 
+
+3. **Interpretación general**: Si asumimos que un valor cercano a 1 es deseable, podríamos interpretar que la distribución de cargas de los UPFs es ""OK"". Sin embargo, esta interpretación depende de los estándares o umbrales específicos que se apliquen en el contexto de la red o sistema en cuestión.
+
+En resumen, basándonos únicamente en los valores proporcionados y sin criterios adicionales, parece que la distribución de cargas es ""OK"", pero esta conclusión debería ser verificada con los estándares específicos de la red o sistema que estés utilizando.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": ""138.96452057""
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": ""134.32336109""
+    }
+  ]
+}
+"
+16,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en la información proporcionada, necesitaríamos más contexto específico sobre cómo se relacionan los valores numéricos [0.96956444, 0.9312918] con los criterios de evaluación de la carga de los UPFs. 
+
+Los valores parecen ser métricas o indicadores de rendimiento, pero sin un umbral o criterio de comparación específico, no es posible concluir si están dentro de un rango aceptable. En general, si estos valores representan un porcentaje de utilización o eficiencia, y si el umbral aceptable es, por ejemplo, por debajo de 0.95, entonces podríamos decir que uno de los valores está ""NOT OK"". Sin embargo, sin esa información de referencia, no se puede hacer una evaluación precisa.
+
+Por lo tanto, para proporcionar una respuesta clara y concisa: 
+
+- **""OK""**: Si los valores están dentro de los límites aceptables definidos por los criterios de evaluación de carga de los UPFs.
+- **""NOT OK""**: Si alguno de los valores excede los límites aceptables.
+
+Sin información adicional sobre los umbrales o criterios específicos, no se puede determinar con certeza el estado de la distribución de cargas de los UPFs.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": ""135.7390212""
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": ""130.38085174""
+    }
+  ]
+}
+"
+17,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en la información proporcionada, necesitaríamos más contexto específico sobre qué representan los valores [0.95732246, 0.89215662]. Estos podrían ser indicadores de carga, eficiencia, latencia, o cualquier otro parámetro relacionado con el rendimiento de los UPFs.
+
+Sin embargo, dado que no se ha proporcionado un umbral o criterio específico para evaluar estos valores, no es posible determinar con certeza si la distribución de cargas es adecuada o no. En general, si estos valores representan un porcentaje de utilización o eficiencia, y están cerca de 1 (o 100%), podría interpretarse que los UPFs están operando cerca de su capacidad máxima, lo cual podría ser una señal de que la carga está bien distribuida si no hay problemas de rendimiento. Sin embargo, sin un contexto claro o criterios de evaluación específicos, no se puede concluir de manera definitiva si es ""OK"" o ""NOT OK"".","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": ""134.02514508""
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": ""124.9019266""
+    }
+  ]
+}
+"
+18,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en los valores proporcionados [0.910486, 0.90292963], necesitamos más contexto sobre qué representan estos valores y cuál es el criterio de aceptación para la distribución de cargas en tu sistema específico.
+
+En general, la distribución de cargas se considera ""OK"" si los valores están dentro de un rango aceptable que garantiza un rendimiento óptimo y evita la sobrecarga de los recursos. Esto suele implicar que las cargas estén equilibradas y no superen ciertos umbrales predefinidos.
+
+Sin embargo, sin información adicional sobre los umbrales específicos o el contexto en el que se están evaluando estos valores, no es posible determinar con certeza si la distribución de cargas es ""OK"" o ""NOT OK"". Te recomendaría revisar la documentación específica de tu sistema o consultar con un experto en la configuración de redes para obtener una evaluación precisa.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": ""127.46804018""
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": ""126.41014776""
+    }
+  ]
+}
+"
+19,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en la información proporcionada, necesitaríamos más contexto específico sobre cómo se relacionan los valores numéricos [0.90782935, 0.97346279] con los criterios de carga o rendimiento esperados para los UPFs en tu red.
+
+Los valores parecen ser métricas o indicadores de rendimiento, pero sin una referencia clara sobre qué representan (por ejemplo, utilización de CPU, latencia, pérdida de paquetes, etc.) y cuáles son los umbrales aceptables para considerar que la distribución de cargas es adecuada, no es posible hacer una evaluación precisa.
+
+En general, para evaluar la distribución de cargas de los UPFs, deberías considerar:
+
+1. **Utilización de Recursos**: Si los valores representan la utilización de recursos (como CPU o memoria), deberías compararlos con los umbrales máximos recomendados. Por ejemplo, si el umbral es del 80% y los valores están por encima de este, podría ser ""NOT OK"".
+
+2. **Balance de Carga**: Si los valores representan la carga distribuida entre diferentes UPFs, deberías verificar si están equilibrados. Una diferencia significativa podría indicar un problema de balanceo de carga.
+
+3. **Rendimiento y Latencia**: Si los valores están relacionados con el rendimiento o la latencia, compáralos con los niveles de servicio acordados (SLA).
+
+Sin más información sobre el contexto y los umbrales específicos, no se puede concluir si la distribución de cargas es ""OK"" o ""NOT OK"". Te recomendaría revisar la documentación técnica o los criterios de rendimiento específicos de tu red para hacer una evaluación adecuada.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": 127.0961095
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": 136.28479114
+    }
+  ]
+}
+"
+20,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"", necesitaría información específica sobre el rendimiento y la carga actual de los UPFs, así como los criterios o umbrales que definen un estado ""OK"" o ""NOT OK"". Los valores proporcionados [0.97608442 0.90793904] parecen ser métricas o indicadores de rendimiento, pero sin contexto adicional sobre qué representan exactamente (por ejemplo, porcentaje de uso de CPU, latencia, etc.) y cuáles son los umbrales aceptables, no es posible hacer una evaluación precisa.
+
+En general, si estos valores representan un porcentaje de utilización de recursos y los umbrales aceptables son, por ejemplo, por debajo del 90%, entonces ambos valores estarían por encima del umbral y la distribución de cargas podría considerarse ""NOT OK"". Sin embargo, si los umbrales son más altos, entonces podrían estar dentro de un rango aceptable.
+
+Por lo tanto, para proporcionar una respuesta clara y concisa, se necesita más información sobre qué representan estos valores y cuáles son los criterios de evaluación establecidos para determinar el estado de la distribución de cargas de los UPFs.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": ""136.6518187""
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": ""127.11146536""
+    }
+  ]
+}
+"
+21,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en la información proporcionada, necesitaría más contexto específico sobre cómo se relacionan los valores numéricos [0.88121939, 0.98984624] con los criterios de evaluación de la carga de los UPFs. 
+
+Los valores parecen ser métricas o indicadores de rendimiento, pero sin un umbral o criterio de comparación específico, no es posible hacer una evaluación clara. En general, para evaluar la distribución de cargas de los UPFs, se considerarían factores como el balance de carga, la capacidad de procesamiento, el uso de recursos y los tiempos de respuesta. Si estos valores representan, por ejemplo, el porcentaje de uso de CPU o memoria, y si el umbral aceptable es inferior a 0.9 (90%), entonces el primer valor estaría ""OK"" y el segundo estaría cerca del límite, pero aún ""OK"". Sin embargo, sin esa información contextual, no se puede proporcionar una respuesta definitiva.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": ""123.37071414""
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": ""138.57847404""
+    }
+  ]
+}
+"
+22,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en la información proporcionada, necesitaríamos más contexto específico sobre cómo se relacionan los valores numéricos [0.94097274, 0.94670124] con los criterios de evaluación de la carga de los UPFs. 
+
+Los valores parecen ser métricas o indicadores de rendimiento, pero sin un umbral o criterio de comparación específico, no es posible determinar si estos valores son aceptables. En general, para evaluar la distribución de cargas de los UPFs, se considerarían factores como el balance de carga, la latencia, el uso de recursos y el cumplimiento de los acuerdos de nivel de servicio (SLA).
+
+Si los valores proporcionados representan, por ejemplo, un porcentaje de utilización de recursos y el umbral aceptable es inferior al 95%, entonces ambos valores estarían dentro del rango aceptable y podríamos decir que es ""OK"". Sin embargo, sin esa información adicional, no se puede hacer una evaluación precisa.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": 131.7361836
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": 132.53817314
+    }
+  ]
+}
+"
+23,"Para determinar si la distribución de cargas de los UPFs (User Plane Functions) es ""OK"" o ""NOT OK"" basándonos en los valores proporcionados [0.92062661, 0.92894827], necesitamos un criterio de evaluación específico que no está presente en la información proporcionada. 
+
+En general, para evaluar la distribución de cargas de los UPFs, se considerarían factores como el equilibrio de carga, la capacidad de procesamiento, el uso de recursos y los umbrales de rendimiento aceptables. Sin un contexto o umbrales específicos para estos valores, no es posible determinar si la distribución es adecuada.
+
+Por lo tanto, con la información proporcionada, no se puede concluir si la distribución de cargas de los UPFs es ""OK"" o ""NOT OK"". Se necesitaría más información sobre los criterios de evaluación o los umbrales de rendimiento esperados para hacer una evaluación precisa.","
+{
+  ""operation"": ""AsSessionWithQoS"",
+  ""UPFs"": [
+    {
+      ""name"": ""UPF_1"",
+      ""ip"": ""UPF_1_IP"",
+      ""bandwidth"": ""128.88772602""
+    },
+    {
+      ""name"": ""UPF_2"",
+      ""ip"": ""UPF_2_IP"",
+      ""bandwidth"": ""130.05275806""
+    }
+  ]
+}
+"

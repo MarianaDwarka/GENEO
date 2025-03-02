@@ -62,17 +62,20 @@ class GAdynamic:
     """
     num_routers = 1  # Número de routers a optimizar
     dimension=3
-    def __init__(self, upf_planeacion:np.ndarray,
+    def __init__(self, 
+                 upf_planeacion:np.ndarray,
                 dataframe_hour:pd.DataFrame,
                 router:int,
                 mu=0.75,
                 eta=0.25,
+                hora_actual: int = 1,
                 generations: int = 50,
                 people_priority: dict = {"tipo1": 5000, "tipo2": 15000, "tipo3": 100000},
                 pop_size: int = 100):
         """
         Inicializa los parámetros del algoritmo genético.
         """
+        self.hora_actual = hora_actual
         self.generations = generations  # Número de generaciones
         self.mu = mu  # Probabilidad de cruce
         self.eta = eta  # Probabilidad de mutación
@@ -292,7 +295,7 @@ class GAdynamic:
         #self.plot_optimal(df_result, dominio)
 
         # Guardar resultados en un archivo CSV.
-        df_result.to_csv(f"./save_csv/resultado_{self.generations}_dinamico.csv", index=False)
+        df_result.to_csv(f"./save_csv/resultado_{self.generations}_{self.hora_actual}_dinamico.csv", index=False)
 
         return {'dominio': dominio, 'imagen': imagen}  # Retorna las mejores soluciones encontradas.
 
