@@ -4,9 +4,9 @@ from ga.ga_dynamico import GAdynamic, usuarios_dataset
 from models.model_phase1 import  prompt_interpretacion_planeacion, consult_db
 from models.model_json import  improve_response_json
 
-generaciones = 10
-upfs = 10
-generacion_por_hora=10
+generaciones = 2000
+upfs = 20
+generacion_por_hora=50
 
 planeacion = GAtelco(generations=generaciones,
                     router=upfs,mu=0.8,eta=0.35).GA()
