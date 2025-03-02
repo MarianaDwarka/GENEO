@@ -1,6 +1,8 @@
 # GENEO: Genetic Evolution for Network Efficiency and Optimization
 
 
+![PANDORA Cover](geneo_portada.jpg)
+
 
 ## Overview
 G.E.N.E.O is a Application Function (AF) based on Genetic Algorithm (GA) supervised with Large Language Model (LLM), focused on planning, optimization, and configuration of Edge computing in 5G SA (Standalone) scenarios.
